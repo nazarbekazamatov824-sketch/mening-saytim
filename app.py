@@ -1,15 +1,15 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
-  return "Salom, mening saytim ishlayapti!"
+  # Bu buyruq sizning templates papkangizdagi index.html ni ochib beradi
+  return render_template("index.html")
 
 
 if __name__ == "__main__":
-  # Render avtomatik beradigan portni o'qiydi, agar bo'lmasa 5000-portni ishlatadi
-  port = int(os.environ.get("PORT", 5000))
+  port = int(os.environ.get("PORT", 10000))
   app.run(host="0.0.0.0", port=port)
