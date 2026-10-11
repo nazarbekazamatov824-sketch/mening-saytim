@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-  # Bu buyruq sizning templates papkangizdagi index.html ni ochib beradi
   return render_template("index.html")
 
 
